@@ -5,7 +5,7 @@ const Sites: CollectionConfig = {
   admin: {
     useAsTitle: "email",
     description: "some description here",
-    hideAPIURL: true,
+    hideAPIURL: false,
   },
   access: {
     read: () => true,
