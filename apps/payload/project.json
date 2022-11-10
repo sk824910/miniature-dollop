@@ -1,29 +1,14 @@
 {
-  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/payload/src",
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:webpack",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nrwl/node:node",
       "options": {
-        "outputPath": "dist/apps/payload",
-        "main": "apps/payload/src/server.ts",
-        "tsConfig": "apps/payload/tsconfig.app.json"
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "extractLicenses": true,
-          "inspect": false,
-          "fileReplacements": [
-            {
-              "replace": "apps/payload/src/environments/environment.ts",
-              "with": "apps/payload/src/environments/environment.prod.ts"
-            }
-          ]
-        }
+        "buildTarget": "payload:mytest"
       }
+      
     },
     "serve": {
       "executor": "@nrwl/node:node",

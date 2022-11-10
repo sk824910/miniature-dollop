@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@angular-devkit/build-angular": "^14.2.9",
-    "@nrwl/node": "^15.0.13"
+    "@nrwl/node": "^15.0.13",
+    "yarn": "^1.22.19"
   }
 }
