@@ -1,0 +1,114 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/payload/src",
+    "projectType": "application",
+    "generators": {},
+    "targets": {
+      "build": {
+        "executor": "@nrwl/webpack:webpack",
+        "options": {
+          "outputPath": "dist/apps/payload",
+          "webpackConfig": "@nrwl/react/plugins/webpack",
+          "index": "apps/payload/src/index.html",
+          "main": "apps/payload/src/main.tsx",
+          "polyfills": "apps/payload/src/polyfills.ts",
+          "tsConfig": "apps/payload/tsconfig.app.json",
+          "assets": [
+            "apps/payload/src/_redirects",
+            {
+              "input": "libs/shared/assets/src/assets",
+              "glob": "**/*",
+              "output": "assets"
+            },
+            {
+              "input": "libs/shared/assets/src",
+              "glob": "favicon.ico",
+              "output": ""
+            }
+          ],
+          "maxWorkers": 8,
+          "styles": [
+            "libs/shared/styles/src/index.scss",
+            "libs/shared/header/index.scss",
+            "node_modules/normalize.css/normalize.css"
+          ],
+          "scripts": [],
+          "buildLibsFromSource": true
+        },
+        "configurations": {
+          "production": {
+            "fileReplacements": [
+              {
+                "replace": "apps/payload/src/environments/environment.ts",
+                "with": "apps/payload/src/environments/environment.prod.ts"
+              }
+            ],
+            "optimization": true,
+            "outputHashing": "all",
+            "sourceMap": false,
+            "extractCss": true,
+            "namedChunks": false,
+            "extractLicenses": true,
+            "vendorChunk": false,
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              }
+            ]
+          },
+          "development": {
+            "extractLicenses": false,
+            "optimization": false,
+            "sourceMap": true,
+            "vendorChunk": true
+          }
+        },
+        "outputs": ["{options.outputPath}"],
+        "defaultConfiguration": "production"
+      },
+      "serve": {
+        "command":"npm run start:frontend",
+        "executor": "@nrwl/webpack:dev-server",
+        "options": {
+          "buildTarget": "payload:build"
+        },
+        "configurations": {
+          "production": {
+            "buildTarget": "payload:build:production"
+          },
+          "development": {
+            "buildTarget": "payload:build:development"
+          }
+        },
+        "defaultConfiguration": "development"
+      },
+      "lint": {
+        "executor": "@nrwl/linter:eslint",
+        "options": {
+          "lintFilePatterns": ["apps/payload/**/*.{ts,tsx,js,jsx}"]
+        },
+        "outputs": ["{options.outputFile}"]
+      },
+      "test": {
+        "executor": "@nrwl/jest:jest",
+        "options": {
+          "jestConfig": "apps/payload/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "outputs": ["{workspaceRoot}/coverage/apps/payload"]
+      },
+      "deploy": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            {
+              "command": "npx ts-node --project tools/tsconfig.tools.json tools/scripts/deploy --siteName nrwl-nx-examples-payload --outputPath dist/apps/payload"
+            }
+          ]
+        }
+      }
+    },
+    "tags": ["type:app", "scope:payload"]
+  }
