@@ -38,4 +38,4 @@ jobs:
 
     - name: Deploy
       if: success()
-      run: aws s3 sync ../../apps/frontend/dist/frontend s3://s3-for-beanie
+      run: aws s3 sync ./apps/frontend/dist/frontend s3://s3-for-beanie
