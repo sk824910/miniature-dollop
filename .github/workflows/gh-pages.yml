@@ -28,13 +28,13 @@ jobs:
       run: cd apps/frontend
       
     - name: Install dependencies
-      run: npm install
+      run: cd apps/frontend;npm install;npm run build:prod
 
     # - name: Run tests
     #   run: npm run test:headless
 
-    - name: Build
-      run: npm run build:prod
+    # - name: Build
+    #   run: npm run build:prod
 
     - name: Deploy
       if: success()
