@@ -16,7 +16,7 @@ on:
 
 env:
   AWS_REGION: us-east-1                  # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: 593027942765.dkr.ecr.us-east-1.amazonaws.com/minidollop-ecr        # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: minidollop-ecr         # set this to your Amazon ECR repository name
   ECS_SERVICE: nginx-service             # set this to your Amazon ECS service name
   ECS_CLUSTER: mini-dollop-ecs-cluster   # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: ../ecs.json       # set this to the path to your Amazon ECS task definition
