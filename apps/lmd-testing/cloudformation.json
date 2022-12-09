@@ -1,0 +1,44 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters" : {
+      "lmdtestversion" : {
+        "Type" : "String",
+        "Default":"latest"
+      }
+    },
+    "Resources" : {
+      "FooFunctionRole" : {
+      "Type": "AWS::IAM::Role" ,
+      "Properties": {
+        "AssumeRolePolicyDocument" : {
+
+          "Version": "2012-10-17",
+          "Statement":{
+            "Effect": "Allow",
+            "Principal": {
+                 "Service": "lambda.amazonaws.com"
+            },
+            "Action":"sts:AssumeRole"
+          }
+        },
+        "Policies":{
+          "PolicyName":"lmd-test-policy",
+
+          "PolicyDocuments":{
+            "Version": "2012-10-17",
+            "Statement": {
+                 "Effect": "Allow"
+            },
+            "Action":["logs:CreateLogGroup","logs:CreateLogStream","logs:PutLogEvents"]
+          }
+        }
+    },
+    "Outputs" : {
+      "AllSecurityGroups" : {
+        "Description" : "Security Groups that are associated with the EC2 instance",
+        "Value" : { "Fn::Join" : [ ", ", { "Fn::GetAtt": [ "AllSecurityGroups", "Value" ] }]}
+      }
+    }
+  }
+}
+}
