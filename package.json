@@ -3,7 +3,8 @@
   "scripts": {
     "test": "jest",
     "start": "nx serve",
-    "build": "nx build",
+    "build:frontend": "nx build frontend",
+    "serve:frontend": "nx serve frontend",
     "lint": "nx workspace-lint && nx lint",
     "testguy": "cd frontend;",
     "e2e": "nx e2e",

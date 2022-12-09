@@ -169,3 +169,6 @@ dist
 .angular
 /.angular
 */node_modules
+
+*./build
+apps/payload/build/*
