@@ -3,7 +3,7 @@
   "projects": {
     "frontend": "apps/frontend",
     "payload": "apps/payload",
-    "nest-project":"apps/nest-project"
+    "nest-backend":"apps/nest-backend"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
