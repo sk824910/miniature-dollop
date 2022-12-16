@@ -8,13 +8,13 @@
 
 FROM node:18
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN ls;npm i; npx nx build nest-backend;
+RUN ls;npm i; ls; npx nx build nest-backend;
 # If you are building your code for production
 # RUN npm ci --only=production
 
