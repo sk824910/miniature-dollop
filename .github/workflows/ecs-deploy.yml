@@ -19,7 +19,7 @@ env:
   ECR_REPOSITORY: minidollop-ecr         # set this to your Amazon ECR repository name
   ECS_SERVICE: nginx-service             # set this to your Amazon ECS service name
   ECS_CLUSTER: mini-dollop-ecs-cluster   # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: ../ecs.json       # set this to the path to your Amazon ECS task definition                                       # file, e.g. .aws/task-definition.json
+  ECS_TASK_DEFINITION: .aws/ecs.json       # set this to the path to your Amazon ECS task definition                                       # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: nginx                  # set this to the name of the container in the  
   
 jobs:
