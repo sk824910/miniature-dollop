@@ -29,5 +29,6 @@
         "{workspaceRoot}/jest.preset.js"
       ]
     }
-  }
+  },
+  "defaultProject": "nest-backend"
 }

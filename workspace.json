@@ -2,8 +2,7 @@
   "version": 2,
   "projects": {
     "frontend": "apps/frontend",
-    "payload": "apps/payload",
-    "nest-backend":"apps/nest-backend"
+    "nest-backend": "apps/nest-backend"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

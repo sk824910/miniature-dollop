@@ -21,8 +21,7 @@
       "es2020",
       "dom"
     ],
-    "paths": {
-    }
+    "paths": {}
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
