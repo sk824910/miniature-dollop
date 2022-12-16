@@ -47,7 +47,7 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: minidollop-ecr
+          ECR_REPOSITORY: mini-dollop-repository
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build --file ./.aws/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
