@@ -7,7 +7,6 @@ FROM node:18-alpine
 # EXPOSE 3000
 
 # RUN mkdir -p /usr/src/app/
-RUN ls;cd ../apps/nest-backend/
 
 # Install app dependencies
 # COPY package.json /usr/src/app/
