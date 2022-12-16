@@ -2,5 +2,5 @@
 FROM node:18-alpine
 WORKDIR /app
 COPY . .
-RUN ls;cd apps/nest-backend; npm install --production; npm run build; npm run start:prod
+RUN ls;cd apps/nest-backend; npm install; npm run build; npm run start:prod
 EXPOSE 3000
