@@ -14,7 +14,7 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN ls;npm i; nx build nest-backend;
+RUN ls;npm i; npx nx build nest-backend;
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -23,4 +23,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "nx", "serve","nest-backend" ]
+CMD [ "npx","nx", "serve","nest-backend" ]
