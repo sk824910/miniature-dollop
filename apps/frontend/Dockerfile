@@ -44,8 +44,7 @@ WORKDIR /app-ui
 COPY . .
 
 # RUN npm run build:frontend -- --deploy-url=/ --prod
-RUN npm i; ng build
-
+RUN npm i; npx ng build
 
 FROM nginx:alpine
 
