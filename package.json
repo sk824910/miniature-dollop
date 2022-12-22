@@ -11,7 +11,10 @@
     "testguy": "cd frontend;",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
-    "create-stack": "export $(cat .env | xargs) && ./scripts/create.sh"
+    "create-stack": "export $(cat .env | xargs) && ./scripts/create.sh",
+    "container:frontend":"docker build -f ./apps/frontend/Dockerfile . -t angulartag",
+    "container:nest":"docker build -f ./apps/nest-backend/Dockerfile . -t nest-tag",
+    "deploy:frontend":"docker run -d --name appui -p 81:81 angulartag"
   },
   "devDependencies": {
     "@nestjs/schematics": "^9.0.0",
@@ -23,7 +26,7 @@
     "@nrwl/nest": "15.3.3",
     "@nrwl/node": "15.3.3",
     "@nrwl/nx-cloud": "15.0.2",
-    "@nrwl/webpack": "15.3.3",
+    "@nrwl/webpack": "^15.3.3",
     "@types/jest": "28.1.1",
     "@types/node": "18.7.1",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
@@ -41,7 +44,9 @@
     "@nestjs/common": "^9.2.1",
     "@nestjs/core": "^9.2.1",
     "@nestjs/platform-express": "^9.0.0",
+    "@nrwl/angular": "^15.3.3",
     "@nrwl/cli": "15.3.3",
+    "@nrwl/node": "15.3.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0",

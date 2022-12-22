@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  angular-frontend:
+    image: angulartag
+    environment:
+      - apiPath=http://nest-backend:3333
+    ports:
+      - '8080:3334'
+
+  nest-backend:
+    image: nest-tag
+    ports:
+      - '8081:3333'

@@ -3,8 +3,18 @@
     "sourceRoot": "apps/frontend/src",
     "prefix": "myworkspace",
     "targets": {
+      "deploy": {
+        "builder": "@nrwl/workspace:run-commands",
+        "options": {
+          "commands": [
+            "nx build frontend",
+            "docker build -f ./apps/frontend/Dockerfile . -t frontEndTag"
+          ],
+          "parallel": false
+        }
+      },
       "build": {
-        "executor": "@angular-devkit/build-angular:browser",
+        "executor": "@nrwl/angular:webpack-browser",
         "outputs": ["{options.outputPath}"],
         "options": {
           "outputPath": "dist/apps/frontend",
