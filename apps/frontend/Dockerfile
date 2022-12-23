@@ -45,7 +45,7 @@ FROM nginx:alpine
 #!/bin/sh
 COPY ./apps/frontend/nginx.conf /etc/nginx/nginx.conf
 ## Remove default nginx index page
-RUN rm -rf /usr/share/nginx/html/*
+RUN rm -rf /usr/share/nginx/html/*; ls 
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
 EXPOSE 4210 81
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
