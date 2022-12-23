@@ -1,0 +1,8 @@
+{
+  "name": "nest-backend",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "2.4.1"
+  },
+  "main": "main.js"
+}
