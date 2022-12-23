@@ -38,7 +38,7 @@ COPY package.json package-lock.json ./
 COPY . . 
 RUN npm install 
 # && mkdir /app-ui && mv ./node_modules ./app-ui
-RUN ls;pwd; cd apps/frontend; ls; npm install -g @angular/cli; ng build 
+RUN ls;pwd; cd apps/frontend; ls; npm install 
 # RUN npm install -g @angular/cli; ng build
 
 FROM nginx:alpine
