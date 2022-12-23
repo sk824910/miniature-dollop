@@ -36,7 +36,8 @@ ENV NODE_ENV=production
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 COPY . . 
-RUN npm install && mkdir /app-ui && mv ./node_modules ./app-ui
+RUN npm install 
+# && mkdir /app-ui && mv ./node_modules ./app-ui
 RUN ls;pwd; cd apps/frontend; ls; node_modules/.bin/ng build 
 # RUN npm install -g @angular/cli; ng build
 
