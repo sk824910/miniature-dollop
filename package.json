@@ -4,18 +4,15 @@
   "scripts": {
     "test": "jest",
     "start": "nx serve",
-    "build:frontend": "nx build frontend",
-    "serve:frontend": "nx serve frontend",
+    "build:minidollop": "nx build minidollop-ui",
     "serve:nestbackend": "nx serve nest-backend",
     "build:nestbackend": "nx build nest-backend",
     "lint": "nx workspace-lint && nx lint",
-    "testguy": "cd frontend;",
     "e2e": "nx e2e",
     "affected:apps": "nx affected:apps",
     "create-stack": "export $(cat .env | xargs) && ./scripts/create.sh",
     "container:minidollop": "docker build -f ./Dockerfile . -t angulartag",
-    "deploy:frontend": "docker run -d --name appui -p 81:81 angulartag",
-    "build:minidollop": "nx build minidollop-ui"
+    "deploy:frontend": "docker run -d --name appui -p 81:81 angulartag"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~15.0.4",
