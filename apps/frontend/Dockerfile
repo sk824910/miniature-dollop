@@ -38,12 +38,12 @@ COPY package.json package-lock.json ./
 COPY . . 
 RUN npm install 
 # && mkdir /app-ui && mv ./node_modules ./app-ui
-RUN ls;pwd; cd apps/frontend; ls; npm install 
+# RUN ls;pwd; cd apps/frontend; ls; npm install 
 # RUN npm install -g @angular/cli; ng build
 
 FROM nginx:alpine
 #!/bin/sh
-COPY ./apps/frontend/nginx.conf /etc/nginx/nginx.conf
+COPY .usr/src/app/apps/frontend/nginx.conf /etc/nginx/nginx.conf
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*; ls 
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
