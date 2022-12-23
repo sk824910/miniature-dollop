@@ -31,12 +31,20 @@
 
 FROM node:lts as builder
 
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 
-WORKDIR /usr/src/app
+# WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
-COPY . . 
-RUN npm install 
+# COPY . . 
+
+# Install the dependencies and make the folder
+RUN npm install && mkdir /app-ui && mv ./node_modules ./app-ui
+
+WORKDIR /app-ui
+
+COPY . .
+RUN npm run ng build -- --deploy-url=/envapp/ --prod
+# RUN npm install 
 # && mkdir /app-ui && mv ./node_modules ./app-ui
 # RUN ls;pwd; cd apps/frontend; ls; npm install 
 # RUN npm install -g @angular/cli; ng build
