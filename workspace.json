@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "frontend": "apps/frontend",
+    "minidollop-ui": "apps/minidollop-ui",
+    "minidollop-ui-e2e": "apps/minidollop-ui-e2e",
     "nest-backend": "apps/nest-backend"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
