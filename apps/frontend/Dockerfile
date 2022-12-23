@@ -43,7 +43,7 @@ RUN npm install
 
 FROM nginx:alpine
 #!/bin/sh
-COPY usr/src/app/apps/frontend/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*; ls 
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
