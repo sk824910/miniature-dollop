@@ -50,7 +50,6 @@ jobs:
           ECR_REPOSITORY: mini-dollop-repository
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          npm i nx -g; nx build minidollop-ui; ls; rm -R dist/apps/minidollop-ui;
           docker build --file ./Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
