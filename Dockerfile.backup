@@ -1,0 +1,10 @@
+#stage 1
+FROM node:lts-alpine as node
+COPY . .
+RUN npm -v; ls; npm install -g nx@latest ;npm install; ls;
+# RUN npm install; ls; npm i nx;npm i @nrwl/cli; npm run build:minidollop 
+# RUN npm run build:minidollop 
+#stage 2
+FROM nginx:latest
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=node . /usr/share/nginx/html

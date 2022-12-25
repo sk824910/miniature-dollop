@@ -21,7 +21,11 @@
       "es2020",
       "dom"
     ],
-    "paths": {}
+    "paths": {
+      "ui": [
+        "libs/ui/src/index.ts"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
