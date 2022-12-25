@@ -1,0 +1,28 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        build:
+          commands:
+            - npx install
+            - npx nx build minidollop-ui
+      artifacts:
+        baseDirectory: ../../dist/apps/minidollop-ui
+        files:
+          - '**/*'
+      cache:
+        paths: []
+    appRoot: apps/minidollop-ui
+  # - frontend:
+  #     phases:
+  #       build:
+  #         commands:
+  #           - npx install
+  #           - npx nx build-storybook components
+  #     artifacts:
+  #       baseDirectory: ../../dist/storybook/components
+  #       files:
+  #         - '**/*'
+  #     cache:
+  #       paths: []
+  #   appRoot: libs/components
