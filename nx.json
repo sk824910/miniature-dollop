@@ -17,20 +17,13 @@
   },
   "targetDefaults": {
     "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json"
-      ]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^default",
-        "{workspaceRoot}/jest.preset.js"
-      ]
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
     }
   },
-  "defaultProject": "nest-backend",
+  "defaultProject": "minidollop-ui",
   "generators": {
     "@nrwl/angular:application": {
       "style": "scss",

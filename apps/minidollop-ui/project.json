@@ -7,25 +7,19 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/minidollop-ui",
         "index": "apps/minidollop-ui/src/index.html",
         "main": "apps/minidollop-ui/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/minidollop-ui/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/minidollop-ui/src/favicon.ico",
           "apps/minidollop-ui/src/assets"
         ],
-        "styles": [
-          "apps/minidollop-ui/src/styles.scss"
-        ],
+        "styles": ["apps/minidollop-ui/src/styles/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -75,9 +69,7 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/minidollop-ui/**/*.ts",
@@ -87,9 +79,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/minidollop-ui/jest.config.ts",
         "passWithNoTests": true

@@ -7,5 +7,5 @@
     "ui": "libs/ui"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
-  "defaultProject": "nest-backend"
+  "defaultProject": "minidollop-ui"
 }
