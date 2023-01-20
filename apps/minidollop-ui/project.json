@@ -19,7 +19,7 @@
           "apps/minidollop-ui/src/favicon.ico",
           "apps/minidollop-ui/src/assets"
         ],
-        "styles": ["apps/minidollop-ui/src/styles/styles.scss"],
+        "styles": ["apps/minidollop-ui/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
