@@ -4,11 +4,17 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { AboutComponent } from "./pages/about/about.component";
 import { HomepageComponent } from "./pages/homepage/homepage.component";
 import { PortfolioComponent } from "./pages/portfolio/portfolio.component";
+import { AppLayoutComponent } from "./primelayout/app.layout.component";
 
 export const appRoutes: Route[] = [
+  // {
+  //   component: HomepageComponent,
+  //   path: "",
+  // },
+
   {
-    component: HomepageComponent,
     path: "",
+    component: AppLayoutComponent,
   },
   {
     component: PortfolioComponent,

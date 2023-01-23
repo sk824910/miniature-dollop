@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { NavComponent } from "./components/nav/nav.component";
 import { PortfolioComponent } from "./pages/portfolio/portfolio.component";
 import { AboutComponent } from "./pages/about/about.component";
+import { AppLayoutModule } from "./primelayout/app.layout.module";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AboutComponent } from "./pages/about/about.component";
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: "enabledBlocking" }),
     MatTabsModule,
+    AppLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

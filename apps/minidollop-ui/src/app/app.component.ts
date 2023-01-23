@@ -10,9 +10,10 @@ export class AppComponent implements OnInit {
   constructor(private primengConfig: PrimeNGConfig) {}
 
   title = "minidollop-ui";
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
+  ngOnInit() {
+    this.primengConfig.ripple = true;
   }
+
   log() {
     console.log("here is some log");
   }
