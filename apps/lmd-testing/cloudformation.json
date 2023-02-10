@@ -1,44 +1,60 @@
 {
-    "AWSTemplateFormatVersion": "2010-09-09",
-    "Parameters" : {
-      "lmdtestversion" : {
-        "Type" : "String",
-        "Default":"latest"
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "example-lambda-sns test Example CloudFormation template to subscribe a lambda to an SNS Topic.\n",
+  "Resources": {
+    "ExampleTopic": {
+      "Type": "AWS::SNS::Topic",
+      "Properties": {
+        "DisplayName": "lambda-sns-topic",
+        "TopicName": "lambda-sns-topic",
+        "Subscription": [
+          {
+            "Protocol": "lambda",
+            "Endpoint": "ExampleFunction.Arn"
+          }
+        ]
       }
     },
-    "Resources" : {
-      "FooFunctionRole" : {
-      "Type": "AWS::IAM::Role" ,
+    "ExampleFunction": {
+      "Type": "AWS::Serverless::Function",
       "Properties": {
-        "AssumeRolePolicyDocument" : {
-
-          "Version": "2012-10-17",
-          "Statement":{
-            "Effect": "Allow",
-            "Principal": {
-                 "Service": "lambda.amazonaws.com"
-            },
-            "Action":"sts:AssumeRole"
-          }
-        },
-        "Policies":{
-          "PolicyName":"lmd-test-policy",
-
-          "PolicyDocuments":{
-            "Version": "2012-10-17",
-            "Statement": {
-                 "Effect": "Allow"
-            },
-            "Action":["logs:CreateLogGroup","logs:CreateLogStream","logs:PutLogEvents"]
-          }
-        }
+        "CodeUri": "./",
+        "Handler": "index.handler",
+        "Runtime": "nodejs8.10"
+      }
     },
-    "Outputs" : {
-      "AllSecurityGroups" : {
-        "Description" : "Security Groups that are associated with the EC2 instance",
-        "Value" : { "Fn::Join" : [ ", ", { "Fn::GetAtt": [ "AllSecurityGroups", "Value" ] }]}
+    "ExampleFunctionInvokePermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": "ExampleFunction",
+        "Principal": "sns.amazonaws.com"
+      }
+    },
+    "ExampleTopicPolicy": {
+      "Type": "AWS::SNS::TopicPolicy",
+      "Properties": {
+        "Topics": ["ExampleTopic"],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": "sns:Publish",
+              "Resource": "ExampleTopic",
+              "Principal": {
+                "AWS": "*"
+              },
+              "Condition": {
+                "ArnLike": {
+                  "AWS:SourceArn": "arn:aws:*:*:${AWS::AccountId}:*"
+                }
+              }
+            }
+          ]
+        }
       }
     }
   }
-}
 }

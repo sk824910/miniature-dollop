@@ -1,6 +1,7 @@
-'use strict'
+"use strict";
 
-exports.handler = function() {
-  console.log('foo');
-  
-}
+exports.handler = function () {
+  console.log("foo");
+
+  console.log("success");
+};

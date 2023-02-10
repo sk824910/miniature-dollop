@@ -13,7 +13,8 @@
     "affected:apps": "nx affected:apps",
     "create-stack": "export $(cat .env | xargs) && ./scripts/create.sh",
     "deploy:ui": "rm -R dist/apps/minidollop-ui; nx build minidollop-ui; docker build -f ./Dockerfile . -t miniaturedollop:latest",
-    "run-container": "docker run --rm -d -p 80:80/tcp miniaturedollop:latest"
+    "run-container": "docker run --rm -d -p 80:80/tcp miniaturedollop:latest",
+    "build:lambda": "mkdir dist/apps/lambda; zip dist/apps/lambda/function.zip apps/lambda/src/index.ts"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~15.0.0",
@@ -37,7 +38,7 @@
     "@nrwl/nx-cloud": "15.0.2",
     "@nrwl/webpack": "15.4.0",
     "@types/jest": "28.1.1",
-    "@types/node": "16.11.7",
+    "@types/node": "18.7.1",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
     "cypress": "^11.0.0",
@@ -75,7 +76,6 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nrwl/angular": "15.4.0",
     "@nrwl/cli": "15.4.0",
-    "@nrwl/node": "15.3.3",
     "nx": "^15.4.0",
     "primeicons": "^6.0.1",
     "primeng": "^15.0.1",
