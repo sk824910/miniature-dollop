@@ -3,7 +3,7 @@ name: Lambda Deployments
 on:
   push:
     branches:
-    - main
+    - lambda
 # commit
 jobs:
   deploy:

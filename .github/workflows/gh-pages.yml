@@ -1,9 +1,9 @@
-name: Minidollop-ui
+name: s3ForBeanie
 
 on:
   push:
     branches:
-    - main
+    - minidollop
 # commit
 jobs:
   deploy:

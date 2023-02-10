@@ -1,9 +1,9 @@
-name: Minidollop-ng
+name: prime
 
 on:
   push:
     branches:
-    - main
+    - minidollop
 # commit
 jobs:
   deploy:
@@ -39,4 +39,4 @@ jobs:
 
     - name: Deploy
       if: success()
-      run: aws s3 sync ./dist/apps/minidollop-ng/ s3://miniature-dollop
+      run: aws s3 sync ./dist/apps/minidollop-ng/ s3://miniature-dollop/test1
