@@ -27,9 +27,10 @@ jobs:
     - name: zip Lambda Function
       run: |
           npm run build:lambda 
+          
     - name: AWS Deploy
       run: |
-          npm i nx -g; nx build lambda; cd dist/apps/lambda/; aws lambda update-function-code --function-name my-function --zip-file fileb://function.zip
+          aws lambda update-function-code --function-name my-function --zip-file fileb://function.zip
 
     # - name: Switch to frontend dir
     #   run: cd apps/frontend
@@ -47,3 +48,9 @@ jobs:
     # - name: Deploy
     #   if: success()
     #   run: aws s3 sync ./dist/apps/minidollop-ui/ s3://s3-for-beanie
+    #       ls; zip -r9 lambda.zip lambdaFunction.py
+    # - name: AWS Deploy
+    #   run: |
+    #       aws lambda update-function-code --function-name NameOfLambdaFunction --zip-file fileb://lambda.zip
+
+    
