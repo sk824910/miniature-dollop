@@ -14,7 +14,7 @@
     "create-stack": "export $(cat .env | xargs) && ./scripts/create.sh",
     "deploy:ui": "rm -R dist/apps/minidollop-ui; nx build minidollop-ui; docker build -f ./Dockerfile . -t miniaturedollop:latest",
     "run-container": "docker run --rm -d -p 80:80/tcp miniaturedollop:latest",
-    "build:lambda": "npx nx build lambda; zip dist/apps/lambda/function.zip apps/lambda/src/index.ts"
+    "deploy:lambda": "npm i nx; nx build lambda; zip dist/apps/lambda/function.zip apps/lambda/src/index.ts"
   },
   "devDependencies": {
     "@angular/compiler": "^15.0.4",
