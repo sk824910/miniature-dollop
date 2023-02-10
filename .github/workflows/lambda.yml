@@ -26,12 +26,12 @@ jobs:
 
     - name: zip Lambda Function
       run: |
-          npm run build:lambda 
-          
-    - name: AWS Deploy
-      run: |
-          cd dist/apps/lambda/; aws lambda update-function-code --function-name my-function --zip-file fileb://function.zip
+          npm run build:lambda ;  cd dist/apps/lambda/; aws lambda update-function-code --function-name my-function --zip-file fileb://function.zip
 
+          
+    # - name: AWS Deploy
+    #   run: |
+         
     # - name: Switch to frontend dir
     #   run: cd apps/frontend
       
