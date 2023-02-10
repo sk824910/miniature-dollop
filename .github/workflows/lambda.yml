@@ -26,7 +26,7 @@ jobs:
 
     - name: zip Lambda Function
       run: |
-          npm run build:lambda 
+          npm run deploy:lambda 
           
     - name: AWS Deploy
       run: |
