@@ -4,6 +4,7 @@ import { PageNotFoundComponent } from "./components/page-not-found/page-not-foun
 import { AboutComponent } from "./pages/about/about.component";
 import { HomepageComponent } from "./pages/homepage/homepage.component";
 import { PortfolioComponent } from "./pages/portfolio/portfolio.component";
+import { SignupComponent } from "./pages/signup/signup.component";
 import { AppLayoutComponent } from "./primelayout/app.layout.component";
 
 export const appRoutes: Route[] = [
@@ -23,6 +24,10 @@ export const appRoutes: Route[] = [
   {
     component: AboutComponent,
     path: "about",
+  },
+  {
+    component: SignupComponent,
+    path: "signup",
   },
   {
     path: "**",

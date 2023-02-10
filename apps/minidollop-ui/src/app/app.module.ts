@@ -10,6 +10,7 @@ import { NavComponent } from "./components/nav/nav.component";
 import { PortfolioComponent } from "./pages/portfolio/portfolio.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { AppLayoutModule } from "./primelayout/app.layout.module";
+import { SignupComponent } from "./pages/signup/signup.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AppLayoutModule } from "./primelayout/app.layout.module";
     NavComponent,
     PortfolioComponent,
     AboutComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

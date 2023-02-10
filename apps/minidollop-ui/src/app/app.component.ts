@@ -12,6 +12,11 @@ export class AppComponent implements OnInit {
   title = "minidollop-ui";
   ngOnInit() {
     this.primengConfig.ripple = true;
+    inputStyle: "outlined"; //default style for input elements
+    menuMode: "static"; //layout mode of the menu, valid values are "static" and "overlay"
+    colorScheme: "light"; //color scheme of the template, valid values are "light" and "dark"
+    theme: "lara-light-indigo"; //default component theme for PrimeNG
+    scale: 14;
   }
 
   log() {

@@ -5,7 +5,8 @@
     "minidollop-ui": "apps/minidollop-ui",
     "minidollop-ui-e2e": "apps/minidollop-ui-e2e",
     "nest-backend": "apps/nest-backend",
-    "ui": "libs/ui"
+    "ui": "libs/ui",
+    "minidollop-ng": "apps/minidollop-ng"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "defaultProject": "minidollop-ui"
