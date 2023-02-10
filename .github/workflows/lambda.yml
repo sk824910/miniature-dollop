@@ -30,7 +30,7 @@ jobs:
           
     - name: AWS Deploy
       run: |
-          aws lambda update-function-code --function-name my-function --zip-file fileb://function.zip
+          ls;cd dist/apps/lambda/; aws lambda update-function-code --function-name my-function --zip-file fileb://function.zip
 
     # - name: Switch to frontend dir
     #   run: cd apps/frontend
