@@ -2,11 +2,12 @@
   "version": 2,
   "projects": {
     "lambda": "apps/lambda",
+    "minidollop-ng": "apps/minidollop-ng",
     "minidollop-ui": "apps/minidollop-ui",
     "minidollop-ui-e2e": "apps/minidollop-ui-e2e",
     "nest-backend": "apps/nest-backend",
-    "ui": "libs/ui",
-    "minidollop-ng": "apps/minidollop-ng"
+    "payload": "apps/payload",
+    "ui": "libs/ui"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "defaultProject": "minidollop-ui"
