@@ -36,6 +36,11 @@ const secret = !process.env?.["PAYLOAD_SECRET"]
   : process.env?.["PAYLOAD_SECRET"];
 const mongo = !process.env?.["MONGODB_URI"] ? "" : process.env?.["MONGODB_URI"];
 
+//todo
+// need to add payload deploy plan
+// need to figure out arch for this project
+// maybe ec2 for payload backend? s3 for frontend?
+
 // Redirect root to Admin panel
 app.get("/", (_, res) => {
   res.redirect("/admin");
